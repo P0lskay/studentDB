@@ -142,10 +142,12 @@
     <ClCompile Include="Men.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="studentDB.cpp" />
+    <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Men.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
