@@ -1,4 +1,7 @@
 #pragma once
+#ifndef STUDENT_H_
+#define STUDENT_H_
+
 #include <map>
 #include "Men.h"
 class Student : public Men
@@ -6,15 +9,29 @@ class Student : public Men
 private:
 	int course = 1;
 	int group = 1;
-	bool stipendia = false;
+	bool stipendia = true;
 	std::map <std::string, int> ex_grades;
 	std::map <std::string, bool> tests;
 
+	//Получит ли студент стипендию
+	void setStipendia();
+
+
+
 public:
-	int getCourse() { return this->course; }
-	int getGroup() { return this->group; }
-	bool getStipendia() { return this->stipendia; }
-	auto getGrades() { return this->ex_grades; }
-	auto getTests() { return this->tests; }
+	Student();
+	Student(std::string name, std::string sex, int age, int course, int group, std::map <std::string, int> ex_grades, std::map <std::string, bool> tests);
+
+	int getCourse();
+	int getGroup();
+	bool getStipendia();
+	auto getGrades();
+	auto getTests();
+
+	void setCourse(int course);
+	void setGroup(int group);
+	void setGrades(std::map <std::string, int> ex_grades);
+	void setTests(std::map <std::string, bool> tests);
 };
+#endif
 
