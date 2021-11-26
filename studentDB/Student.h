@@ -11,7 +11,7 @@ private:
 	int group = 1;
 	bool stipendia = true;
 	std::map <std::string, int> ex_grades;
-	std::map <std::string, bool> tests;
+	  std::map <std::string, bool> tests;
 
 	//Получит ли студент стипендию
 	void setStipendia();
