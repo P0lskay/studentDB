@@ -13,6 +13,7 @@ Student::Student(std::string name, std::string sex, int age, int course, int gro
 	this->setGrades(ex_grades);
 	this->setTests(tests);
 	this->setStipendia();
+	students_list.push_back(*this);
 }
 
 int Student::getCourse() { return this->course; }
@@ -20,6 +21,7 @@ int Student::getGroup() { return this->group; }
 bool Student::getStipendia() { return this->stipendia; }
 auto Student::getGrades() { return this->ex_grades; }
 auto Student::getTests() { return this->tests; }
+auto Student::getStudents() { return students_list; }
 
 void Student::setCourse(int course) { this->course = course; }
 void Student::setGroup(int group) { this->group = group; }
