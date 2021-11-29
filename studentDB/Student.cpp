@@ -2,6 +2,8 @@
 #include <map>
 #include "Student.h"
 
+std::vector <Student> Student::students_list = {};
+
 Student::Student() {}
 Student::Student(std::string name, std::string sex, int age, int course, int group, std::map <std::string, int> ex_grades, std::map <std::string, bool> tests)
 {
@@ -21,7 +23,7 @@ int Student::getGroup() { return this->group; }
 bool Student::getStipendia() { return this->stipendia; }
 auto Student::getGrades() { return this->ex_grades; }
 auto Student::getTests() { return this->tests; }
-auto Student::getStudents() { return students_list; }
+std::vector <Student> Student::getStudents() { return students_list; }
 
 void Student::setCourse(int course) { this->course = course; }
 void Student::setGroup(int group) { this->group = group; }

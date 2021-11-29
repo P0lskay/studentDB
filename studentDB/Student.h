@@ -29,12 +29,14 @@ public:
 	bool getStipendia();
 	auto getGrades();
 	auto getTests();
-	auto getStudents();
+	std::vector <Student> getStudents();
 
 	void setCourse(int course);
 	void setGroup(int group);
 	void setGrades(std::map <std::string, int> ex_grades);
 	void setTests(std::map <std::string, bool> tests);
 };
+
+
 #endif
 

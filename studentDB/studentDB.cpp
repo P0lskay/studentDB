@@ -5,9 +5,14 @@
 
 int main()
 {
-	Student m;
-	m.setAge(32);
-	std::cout << m.getAge();
+	Student* m = new Student("Andrew", "Male", 19, 2, 2, { {"Диференицальные уравнения", 4} }, { {"Экономика", false}});
+	std::cout << m->getStipendia() << std::endl;
+	std::vector <Student> studi = m->getStudents();
+
+	for (auto student : studi)
+	{
+		std::cout << student.getName();
+	}
 }
 
 

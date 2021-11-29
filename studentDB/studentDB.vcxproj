@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="Men.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="studentDB.h" />
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
