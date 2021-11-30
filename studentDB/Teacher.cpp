@@ -1,7 +1,11 @@
 #include "Teacher.h"
+
+std::vector <Teacher> Teacher::teachers_list = {};
+
 auto Teacher::getGroups() { return this->groups; }
 auto Teacher::getChair() { return this->chair; }
 auto Teacher::getRank() { return this->chair; }
+auto Teacher::getTeachers() { return this->teachers_list; }
 int Teacher::getSalary() { return this->salary; }
 
 void Teacher::setGroups(std::vector <std::string> groups) { this->groups = groups; }

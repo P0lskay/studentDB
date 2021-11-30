@@ -10,6 +10,7 @@ private:
 	std::string chair;
 	std::string rank;
 	std::vector <std::string> groups;
+	static std::vector <Teacher> teachers_list;
 	int salary = 0;
 
 	//Определение зп для преподавателя
@@ -20,6 +21,7 @@ public:
 	auto getChair();
 	auto getRank();
 	int getSalary();
+	auto getTeachers();
 
 	void setGroups(std::vector <std::string> groups);
 	void setChair(std::string chair);

@@ -6,12 +6,44 @@
 int main()
 {
 	Student* m = new Student("Andrew", "Male", 19, 2, 2, { {"Диференицальные уравнения", 4} }, { {"Экономика", false}});
-	std::cout << m->getStipendia() << std::endl;
-	std::vector <Student> studi = m->getStudents();
+	
+	setlocale(LC_ALL, "Russian");
 
-	for (auto student : studi)
+	std::string chois;
+	std::string name;
+	int age;
+	int group;
+	int course;
+	std::string gender;
+
+	std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподаватель\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
+	std::cin >> chois;
+	
+	while (chois != "q")
 	{
-		std::cout << student.getName();
+		std::cout << "Имя: ";
+		std::cin >> name;
+		std::cout << "Пол(муж/жен): ";
+		std::cin >> gender;
+		std::cout << "Возраст: ";
+		std::cin >> age;
+
+		if (chois == "студент")
+		{
+			std::cout << "Курс студента: ";
+			std::cin >> course;
+			std::cout << "Номер группы студента: ";
+			std::cin >> group;
+
+		}
+		else if (chois == "преподаватель")
+		{
+
+		}
+		else
+		{
+
+		}
 	}
 }
 
