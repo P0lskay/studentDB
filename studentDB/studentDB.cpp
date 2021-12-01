@@ -2,10 +2,12 @@
 
 #include <iostream>
 #include "Student.h"
+#include <Windows.h>
 
 int main()
 {
-
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "Russian");
 	Student test;
 	Student* m = new Student("Андрей", "м", 19, 2, 2, { {"Диференицальные уравнения", 4} }, { {"Экономика", false}});
@@ -20,7 +22,7 @@ int main()
 	int test_size;
 	std::string gender;
 
-	std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподаватель\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
+	std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподователь\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
 	std::cin >> chois;
 	
 	while (chois != "q")
@@ -73,7 +75,7 @@ int main()
 			Student* student = new Student(name, gender, age, course, group, ex_grades, test_grades);
 
 		}
-		else if (chois == "преподаватель")
+		else if (chois == "преподователь")
 		{
 
 		}
