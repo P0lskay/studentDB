@@ -16,10 +16,6 @@ int main()
 	std::string chois;
 	std::string name;
 	int age;
-	int group;
-	int course;
-	int ex_size;
-	int test_size;
 	std::string gender;
 
 	std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподователь\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
@@ -37,6 +33,11 @@ int main()
 
 		if (chois == "студент")
 		{
+			int group;
+			int course;
+			int ex_size;
+			int test_size;
+
 			std::cout << "Курс студента: ";
 			std::cin >> course;
 			std::cout << "Номер группы студента: ";
@@ -77,11 +78,17 @@ int main()
 		}
 		else if (chois == "преподователь")
 		{
+			std::string chair;
+			std::string rank;
 
+			std::cout << "Кафедра преподавателя: ";
+			std::cin >> chair;
+			std::cout << "Введите одно из званий преподавателя: \"Профессор\", \"Декан\", \"Заведующий кафедрой\", \"Доцент\", \"Cтарший преподаватель\", \"Младший научный сотрудник\"";
+			std::cin >> rank;
 		}
 		else
 		{
-
+			std::cout << "Введено неверное значение" << std::endl;
 		}
 
 		auto students_list = test.getStudents();
@@ -90,6 +97,7 @@ int main()
 		{
 			std::cout << student.getName() << "; ";
 		}
+		std::cout << std::endl;
 
 		std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподаватель\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
 		std::cin >> chois;
