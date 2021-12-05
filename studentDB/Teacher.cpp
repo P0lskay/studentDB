@@ -2,13 +2,25 @@
 
 std::vector <Teacher> Teacher::teachers_list = {};
 
+Teacher::Teacher(){}
+Teacher::Teacher(std::string name, std::string sex, int age, std::string chair, std::string rank, std::vector<int> groups)
+{
+	this->setName(name);
+	this->setSex(sex);
+	this->setAge(age);
+	this->setChair(chair);
+	this->setGroups(groups);
+	this->setRank(rank);
+	teachers_list.push_back(*this);
+}
+
 auto Teacher::getGroups() { return this->groups; }
 auto Teacher::getChair() { return this->chair; }
 auto Teacher::getRank() { return this->chair; }
 auto Teacher::getTeachers() { return this->teachers_list; }
 int Teacher::getSalary() { return this->salary; }
 
-void Teacher::setGroups(std::vector <std::string> groups) { this->groups = groups; }
+void Teacher::setGroups(std::vector <int> groups) { this->groups = groups; }
 void Teacher::setChair(std::string chair) { this->chair = chair; }
 void Teacher::setRank(std::string rank) { this->rank = rank; }
 
@@ -27,4 +39,9 @@ void Teacher::setSalary()
 	else if (this->rank == "ћладший научный сотрудник")
 		this->salary += 15000;
 	this->salary += 300 * this->getGroups().size();
+}
+
+void Teacher::addGroup(int group)
+{
+	this->groups.push_back(group);
 }

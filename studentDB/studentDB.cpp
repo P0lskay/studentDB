@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Student.h"
+#include "Teacher.h"
 #include <Windows.h>
 
 int main()
@@ -80,11 +81,34 @@ int main()
 		{
 			std::string chair;
 			std::string rank;
+			std::string groups_string_format;
+			std::vector <int> groups;
 
 			std::cout << "Кафедра преподавателя: ";
 			std::cin >> chair;
 			std::cout << "Введите одно из званий преподавателя: \"Профессор\", \"Декан\", \"Заведующий кафедрой\", \"Доцент\", \"Cтарший преподаватель\", \"Младший научный сотрудник\"";
 			std::cin >> rank;
+
+			std::cout << "Группы, которые ведет преподаватель, через пробел: ";
+			std::getline(std::cin, groups_string_format);
+			int pointer = 0;
+			std::string group_now = "";
+			for (int i = 0; i < groups_string_format.length(); i++)
+			{
+				if (groups_string_format[i] == ' ')
+				{
+					group_now = groups_string_format.substr(pointer, i - 1);
+					groups.push_back(std::stoi(group_now));
+				}
+				else if (i == groups_string_format.length()-1)
+				{
+					group_now = groups_string_format.substr(pointer, i);
+					groups.push_back(std::stoi(group_now));
+				}
+			}
+
+			Teacher* teacher = new Teacher(name, gender, age, chair, rank, groups);
+
 		}
 		else
 		{
