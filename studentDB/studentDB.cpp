@@ -77,7 +77,7 @@ int main()
 			Student* student = new Student(name, gender, age, course, group, ex_grades, test_grades);
 
 		}
-		else if (chois == "преподователь")
+		else if (chois == "преподаватель")
 		{
 			std::string chair;
 			std::string rank;
@@ -115,17 +115,15 @@ int main()
 			std::cout << "Введено неверное значение" << std::endl;
 		}
 
-		auto students_list = test.getStudents();
 
-		for (Student student : students_list)
-		{
-			std::cout << student.getName() << "; ";
-		}
-		std::cout << std::endl;
+		
 
 		std::cout << "Введите: \"студент\", если хотите добавить студента, либо введите: \"преподаватель\", если хотите добавить преподователя, если хотите выйти из программы, то введите q и нажмите Enter: ";
 		std::cin >> chois;
 	}
+
+
+	
 }
 
 
